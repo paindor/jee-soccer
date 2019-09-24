@@ -37,7 +37,9 @@ public class PlayerDaoImpl implements PlayerDao{
 			
 			//Statement stm = conn.createStatement();
 			String sql = "SELECT DISTINCT POSITION as pos FROM PLAYER WHERE POSITION IS NOT NULL";
-			ResultSet stm = DatabaseFactory.createDatabase(Constants.VENDER).safd
+			ResultSet result = DatabaseFactory.createDatabase(Constants.VENDER).
+					getConnection().
+					prepareStatement(sql).executeQuery();
 			
 		//	ResultSet result = DatabaseFactory.createDatabase()
 				

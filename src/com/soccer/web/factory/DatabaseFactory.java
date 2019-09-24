@@ -6,12 +6,9 @@ public class DatabaseFactory {
 	
 	//private Database base;
 	
-	public static Database createDatabase(String vender, String username, 
-			String password) {
+	public static Database createDatabase(String vender) {
 		Database db = null;
 			
-		String dburl = "";
-		String dbdrv = "";
 		
 		
 		switch(vender) {
