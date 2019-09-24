@@ -37,12 +37,10 @@ public class PlayerDaoImpl implements PlayerDao{
 			
 			//Statement stm = conn.createStatement();
 			String sql = "SELECT DISTINCT POSITION as pos FROM PLAYER WHERE POSITION IS NOT NULL";
-			PreparedStatement stm = DatabaseFactory.createDatabase("oracle", 
-					Constants.USERNAME, Constants.PASSWORD).getconnConnection()
-					.prepareStatement(sql);
+			ResultSet stm = DatabaseFactory.createDatabase(Constants.VENDER).safd
 			
-			
-			ResultSet result = stm.executeQuery();
+		//	ResultSet result = DatabaseFactory.createDatabase()
+				
 			System.out.println(sql);
 			while(result.next()) {
 				pl.add(result.getString("pos"));
