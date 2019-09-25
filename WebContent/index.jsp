@@ -7,57 +7,47 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>k리그의 모든것</title>
 </head>
-<body>
-<div>
-	
-		<h2><a  id = "btn" href="#">2.포지션종류</a></h2>
-		!-- SQL_TEST_004
-!-- 수원팀(ID: K02)골키퍼4
-!--SELECT PLAYER_NAME
-!--FROM PLAYER
-!--WHERE TEAM_ID LIKE 'K02'
-!--AND POSITION LIKE 'GK';
-	<h2>2.팀아이디와 포지션 입력시 해당정보 출력</h2>
-	<form  id = "04_button" action='<%=request.getContextPath()%>/player.do'>
-	팀아이디<input type="text"  name = "tid" /><br />
-	포지션<input type="text"  name = "position" /><br />
-	<input type="hidden"  name = "action" value = "find"/><br />
-	<input type="hidden"  name = "page" value = "4_find_by_teamid_position" /><br />
-	<input type="submit"  value = "확인" /><br />
-	
 
+<body>
+	<div id = "wrapper" style = "width: 100%;height:100%">
+			<h1>k리그의 모든것</h1>
+		<form id = "login_form" action='<%=request.getContextPath()%>/player.do?'>
+			<table border = "1" style="width:300px;height:200px;margin:300px auto">
 	
+			<tr>
+				<td style="width:350px">
+				아이디 <input type="text" name = "playerId" /></td>
+				
+				<td rowspan = "2">
+					<input type="submit" value = "로그인" />
+				</td>
+			
+			</tr>
+			<tr>
+				<td>
+				비밀번호 <input type="text" name = "solar" />
+				<input type="hidden" name = "action" value = "move" />
+				<input type="hidden" name = "page" value = "hompage" />
+				</td>
+				
+			</tr>
+		
+		</table>
+		
+		</form>
+		
+		
+		<h3 style="width:300px;margin:0 auto"><a id = "a_join"href="">회원가입</a> </h3>
+		
 	
-	</form>
-	<form  id = "btn05"action='<%=request.getContextPath()%>/player.do'>
-	팀아이디 <input type="text" name = "tid" /><br />
-	이름 <input type="text" name = "name" /><br />
-	키 <input type="text" name = "height" /><br />
-	 <input type="hidden" name = "action" value = "find3" /><br />
-	 <input type="hidden" name = "page"  value = "5_find_byteamid_height_name"/><br />
-	 <input type="submit"  value = "확인"/>
-	 
-	
-	</form>	
 </div>
 <script>
-$('#btn').click(function() {
+$('#login_form').submit(function() {
+	alert('로그인');
 	
-	alert('클릭');
-	location.assign('<%=request.getContextPath()%>/player.do?action=move&page=2_showposition');
 	
 });
 
-$('#04_button').submit(function() {
-	alert('확인');
-	
-});
-$('#btn05').submit(function() {
-	alert("확인");
-	
-});
-</script>
-	
-	
+</script>	
 </body>
 </html>

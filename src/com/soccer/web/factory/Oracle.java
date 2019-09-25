@@ -3,6 +3,9 @@ package com.soccer.web.factory;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import com.soccer.web.enums.DB;
+import com.soccer.web.enums.DBDriver;
+import com.soccer.web.enums.Url;
 import com.soccer.web.pool.Constants;
 
 public class Oracle  implements Database{
@@ -11,8 +14,8 @@ public class Oracle  implements Database{
 	public Connection getConnection() {
 		Connection conn = null;
 		try {
-			Class.forName(Constants.ORACLE_DRIVER);
-			conn = DriverManager.getConnection(Constants.ORACLE_URL,
+			Class.forName(DBDriver.ORACLE_DRIVER.toString());
+			conn = DriverManager.getConnection(Url.ORACLE_URL.toString(),
 					Constants.USERNAME, Constants.PASSWORD);
 			
 			
