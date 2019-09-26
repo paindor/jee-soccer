@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class PlayerDaoImpl implements PlayerDao{
 	private ResultSet result;
 	private static PlayerDaoImpl instance = new PlayerDaoImpl();
 	
-	public static PlayerDaoImpl GetInstance() {
+	public static PlayerDaoImpl getInstance() {
 	
 		
 		return instance;
@@ -140,6 +141,84 @@ public class PlayerDaoImpl implements PlayerDao{
 		
 		return list;
 		
+	}
+	@Override
+	public boolean login(PlayerBean param) {
+		boolean last = false;
+		System.out.println("6.다오임플");
+		try {
+			String plid = param.getPlayerId();
+			String solar = param.getSolar();
+			System.out.println(param.getPlayerId() + "로그인다오");
+
+			String sql = "SELECT PLAYER_ID ID , SOLAR solar FROM PLAYER WHERE PLAYER_ID LIKE ? AND SOLAR LIKE ?";
+			PreparedStatement stm = DatabaseFactory.createDatabase(Constants.VENDER)
+					.getConnection().prepareStatement(sql);
+					
+			
+			stm.setString(1, param.getPlayerId());
+			stm.setString(2, param.getSolar());
+			//String sql = "SELECT PLAYER_ID ID , SOLAR solar FROM PLAYER WHERE PLAYER_ID LIKE ? AND SOLAR LIKE ?";
+			System.out.println(sql);
+			
+			ResultSet result = stm.executeQuery();
+			
+			
+			String temp = "";
+			String temp2 = "";
+			while(result.next()) {
+				temp = result.getString(1);
+				temp2 = result.getString(2);
+				
+				
+			}
+			
+			if(temp != "" && temp2 != "") {
+				last = true;
+			System.out.println(temp + "다오 로그인");
+			
+				
+			}
+			
+			
+			
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return last;
+	}
+	@Override
+	public List<PlayerBean> selectByMany(PlayerBean param) {
+
+		List<PlayerBean> result = new ArrayList<PlayerBean>();
+		String sql = "SELECT PLAYER_NAME \r\n" + 
+				"FROM PLAYER\r\n" + 
+				"WHERE TEAM_ID LIKE ?";
+		try {
+			PreparedStatement stm = DatabaseFactory.createDatabase(Constants.VENDER)
+					.getConnection().prepareStatement(sql);
+			stm.setString(1, param.getTeamId());
+			ResultSet rs = stm.executeQuery();
+			PlayerBean bean = new PlayerBean();
+			
+			while(rs.next()) {
+				bean.setPlayerName(rs.getString(1));
+				result.add(bean);
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return result;
 	}
 
 }

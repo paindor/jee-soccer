@@ -15,4 +15,9 @@ public interface PlayerDao {
 	
 	public List<PlayerBean> findByHeightNameTeam(PlayerBean param);
 	
+	public List<PlayerBean> selectByMany(PlayerBean param);
+	
+	public boolean login(PlayerBean param);
+	
+	
 }

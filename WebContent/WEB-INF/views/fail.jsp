@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-해당ID가 ${players.get(0).getTeamId()} 포지션${players.get(0).getPosition()} 이 일치하는선수는 ${players.get(0).getPlayerName()} 입니다
-
-
+<h1>로그인실패</h1>
 </body>
 </html>

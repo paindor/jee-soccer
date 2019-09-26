@@ -14,10 +14,11 @@ public class PlayerServiceImpl implements PlayerService{
 	
 	public static PlayerServiceImpl getInstance() {
 		return instance;
+		
 	}
 	
 	private PlayerServiceImpl() {
-		
+		System.out.println("5.서비스임플");
 	}
 	
 	@Override
@@ -27,12 +28,12 @@ public class PlayerServiceImpl implements PlayerService{
 		
 		
 		
-		return PlayerDaoImpl.GetInstance().selectPositions();
+		return PlayerDaoImpl.getInstance().selectPositions();
 	}
 	@Override
 	public List<PlayerBean> findTeamIdByposition(PlayerBean param) {
 		
-		List<PlayerBean> list = PlayerDaoImpl.GetInstance().findPositionByTeamid(param);
+		List<PlayerBean> list = PlayerDaoImpl.getInstance().findPositionByTeamid(param);
 		
 		
 		
@@ -45,11 +46,18 @@ public class PlayerServiceImpl implements PlayerService{
 	public List<PlayerBean> findByTidNameHeight(PlayerBean param) {
 		List<PlayerBean> list = new ArrayList<PlayerBean>();
 		
-		list = PlayerDaoImpl.GetInstance().findByHeightNameTeam(param);
+		list = PlayerDaoImpl.getInstance().findByHeightNameTeam(param);
 		
 		
 		
 		return list;
+	}
+
+	@Override
+	public boolean login(PlayerBean param) {
+		
+		return PlayerDaoImpl.getInstance().login(param);
+		
 	}
 	
 	

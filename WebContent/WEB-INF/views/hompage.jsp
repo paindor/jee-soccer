@@ -21,7 +21,7 @@
 	<form  id = "04_button" action='<%=request.getContextPath()%>/player.do'>
 	팀아이디<input type="text"  name = "tid" /><br />
 	포지션<input type="text"  name = "position" /><br />
-	<input type="hidden"  name = "action" value = "find"/><br />
+	<input type="hidden"  name = "action" value = "search"/><br />
 	<input type="hidden"  name = "page" value = "4_find_by_teamid_position" /><br />
 	<input type="submit"  value = "확인" /><br />
 	
@@ -33,7 +33,7 @@
 	팀아이디 <input type="text" name = "tid" /><br />
 	이름 <input type="text" name = "name" /><br />
 	키 <input type="text" name = "height" /><br />
-	 <input type="hidden" name = "action" value = "find3" /><br />
+	 <input type="hidden" name = "action" value = "search" /><br />
 	 <input type="hidden" name = "page"  value = "5_find_byteamid_height_name"/><br />
 	 <input type="submit"  value = "확인"/>
 	 
@@ -44,7 +44,7 @@
 $('#btn').click(function() {
 	
 	alert('클릭');
-	location.assign('<%=request.getContextPath()%>/player.do?action=move&page=2_showposition');
+	location.assign('<%=request.getContextPath()%>/player.do?action=search&page=2_showposition');
 	
 });
 

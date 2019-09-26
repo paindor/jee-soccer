@@ -11,7 +11,7 @@ public interface PlayerService {
 	public List<String> findPositions();
 	public List<PlayerBean> findTeamIdByposition(PlayerBean param);
 	public List<PlayerBean> findByTidNameHeight(PlayerBean param);
-	
+	public boolean login(PlayerBean param);
 	
 
 }

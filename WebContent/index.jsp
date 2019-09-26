@@ -19,14 +19,14 @@
 				아이디 <input type="text" name = "playerId" /></td>
 				
 				<td rowspan = "2">
-					<input type="submit" value = "로그인" />
+					<input type="submit" value = "로그인" style = "width: 100%;height:100%" />
 				</td>
 			
 			</tr>
 			<tr>
 				<td>
 				비밀번호 <input type="text" name = "solar" />
-				<input type="hidden" name = "action" value = "move" />
+				<input type="hidden" name = "action" value = "login" />
 				<input type="hidden" name = "page" value = "hompage" />
 				</td>
 				

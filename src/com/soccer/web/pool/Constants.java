@@ -7,7 +7,8 @@ public class Constants {
 			
 	 		USERNAME = "c##oracle",
 	 		PASSWORD = "oracle",
-	 		VIEW_PATH = "WEB-INF/views/%s.jsp";
+	 		VIEW_PATH = "WEB-INF/views/%s.jsp",
+	 		VIEW_PATH_DOUBLE ="WEB-INF/views/%s/%s.jsp";
 	
 	 		
 }

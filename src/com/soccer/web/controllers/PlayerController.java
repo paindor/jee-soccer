@@ -25,13 +25,15 @@ public class PlayerController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println("1컨트롤러");
+		System.out.println(request.getParameter("playerId") + "컨트롤러");
+		System.out.println(request.getParameter("action") + "컨트롤러");
 		Receiver.init(request);
+	
 		
 		
-		Sender sender = new Sender();
+		Sender.send(request, response);
 		
-		
-		sender.send(request, response);
 		
 		
 		

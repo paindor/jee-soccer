@@ -7,7 +7,7 @@ public class Receiver {
 	
 	
 	public static void init(HttpServletRequest request) {
-		
+		System.out.println("2.¸®½Ã¹ö");
 		cmd = Commander.workOrder(request);
 		
 		

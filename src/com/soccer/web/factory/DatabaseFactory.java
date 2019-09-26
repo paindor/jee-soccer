@@ -12,7 +12,7 @@ public class DatabaseFactory {
 			
 		
 		
-		switch(DB.valueOf(vender)) {
+		switch(DB.valueOf(vender.toUpperCase())) {
 		case ORACLE:
 			db =  new Oracle();
 			break;

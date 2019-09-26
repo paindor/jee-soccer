@@ -15,6 +15,7 @@ public class Sender {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		System.out.println("5 ¼¾´õ");
 		
 	}
 	public static void redirect(HttpServletRequest request 

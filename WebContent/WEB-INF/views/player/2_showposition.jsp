@@ -7,6 +7,6 @@
 <title>포지션</title>
 </head>
 <body>
-포지션은  ${position}  입니다.
+포지션은  ${positions}  입니다.
 </body>
 </html>

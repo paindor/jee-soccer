@@ -11,24 +11,28 @@ public class Commander {
 	public static Command workOrder(HttpServletRequest request) {
 		Command cmd = null;
 	
+		System.out.println("3 Ä¿¸Ç´õ" + request.getParameter("action"));
+		request.getParameter("action");
 		
 		switch(Action.valueOf(request.getParameter("action").toUpperCase())) {
 		case MOVE:
 			cmd = new MoveCommand(request);
 			
 			break;
+			
 		case SEARCH:
-			cmd = new SearchCommand();
+			
+			cmd = new SearchCommand(request);
 			
 			break;
-		default:
-			break;
-		
+		case LOGIN:
+			cmd = new LoginCommand(request);
 			
+					
 		
 		}
 		return cmd;
-		
+	
 		
 		
 	}

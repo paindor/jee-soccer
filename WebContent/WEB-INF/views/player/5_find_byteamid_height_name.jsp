@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-해당선수는 ${list1.get(0).getPlayerName()}입니다
+해당선수는 ${players.get(0).getPlayerName()}입니다
 
 </body>
 </html>
