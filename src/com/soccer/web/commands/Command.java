@@ -16,7 +16,8 @@ public class Command implements Order {
 	@Override
 	public void excute() {
 		
-		this.view = String.format(Constants.VIEW_PATH, page);
+		this.view = String.format(Constants.VIEW_PATH_DOUBLE,domain, page);
+		System.out.println(this.domain + "½Ã¹ß");
 		
 		// TODO Auto-generated method stub
 		

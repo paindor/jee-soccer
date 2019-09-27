@@ -18,7 +18,7 @@
 !--WHERE TEAM_ID LIKE 'K02'
 !--AND POSITION LIKE 'GK';
 	<h2>2.팀아이디와 포지션 입력시 해당정보 출력</h2>
-	<form  id = "04_button" action='<%=request.getContextPath()%>/player.do'>
+	<form  id = "04_button" action='${ctx}%/player.do'>
 	팀아이디<input type="text"  name = "tid" /><br />
 	포지션<input type="text"  name = "position" /><br />
 	<input type="hidden"  name = "action" value = "search"/><br />

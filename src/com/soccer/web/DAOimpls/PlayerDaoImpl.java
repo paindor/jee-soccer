@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.soccer.web.DAOs.PlayerDao;
 import com.soccer.web.domains.PlayerBean;
+import com.soccer.web.enums.Query;
 import com.soccer.web.factory.DatabaseFactory;
 import com.soccer.web.pool.Constants;
 
@@ -151,13 +152,23 @@ public class PlayerDaoImpl implements PlayerDao{
 			String solar = param.getSolar();
 			System.out.println(param.getPlayerId() + "로그인다오");
 
-			String sql = "SELECT PLAYER_ID ID , SOLAR solar FROM PLAYER WHERE PLAYER_ID LIKE ? AND SOLAR LIKE ?";
+			String sql = Query.SELECT2_BY_VALUE2.toString();
+			
 			PreparedStatement stm = DatabaseFactory.createDatabase(Constants.VENDER)
 					.getConnection().prepareStatement(sql);
 					
 			
-			stm.setString(1, param.getPlayerId());
-			stm.setString(2, param.getSolar());
+			stm.setString(1, "PLAYER_ID pid");
+			stm.setString(2,  "SOLAR solar");
+			
+			stm.setString(3, "PLAYER");
+			
+			
+			stm.setString(4, "PLAYER_ID");
+			stm.setString(5, "'" + param.getPlayerId() + "'");
+			stm.setString(6, "SOLAR");
+			stm.setString(7, "'" + param.getSolar() + "'");
+			
 			//String sql = "SELECT PLAYER_ID ID , SOLAR solar FROM PLAYER WHERE PLAYER_ID LIKE ? AND SOLAR LIKE ?";
 			System.out.println(sql);
 			

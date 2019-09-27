@@ -16,6 +16,9 @@ public class SearchCommand extends Command{
 		setAction(request.getParameter("action"));
 		setPage(request.getParameter("page"));
 		
+		System.out.println("서블릿패스" + request.getServletPath());
+		System.out.println("컨텍스트패스" + request.getContextPath());
+		
 		
 		excute();
 		

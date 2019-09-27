@@ -8,7 +8,9 @@ public class MoveCommand extends Command {
 
 	public MoveCommand(HttpServletRequest request) {
 		setRequest(request);
-		setDomain(request.getContextPath().substring(1, request.getServletPath().indexOf(".")));
+	//	setDomain(request.getServletPath().substring(1, request.getServletPath().indexOf(".")));
+		setDomain(request.getParameter("join"));
+		
 		setAction(request.getParameter("action"));
 		setPage(request.getParameter("page"));
 		excute();
@@ -20,5 +22,6 @@ public class MoveCommand extends Command {
 		
 	
 	}
+	
 
 }
