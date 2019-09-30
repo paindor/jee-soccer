@@ -22,7 +22,7 @@ public class FacadeController extends HttpServlet {
 	}
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.println("ÆÛ»çµå ÁøÀÔ");
+		System.out.println("ï¿½Û»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		HttpSession session  = request.getSession();
 		for(Resources r : Resources.values()) {
 			
@@ -43,10 +43,10 @@ public class FacadeController extends HttpServlet {
 		
 		request.getRequestDispatcher(String.format(Constants.VIEW_PATH_DOUBLE,
 				request.getServletPath().substring(1, request.getServletPath().indexOf(".")),
-				"login"))
+				"login1"))
 			.forward(request, response);
 		
-		System.out.println(request.getContextPath() +"¾îµð³Ä");
+		System.out.println(request.getContextPath() +"ï¿½ï¿½ï¿½ï¿½");
 		System.out.println(request.getServletPath());
 		
 	}
