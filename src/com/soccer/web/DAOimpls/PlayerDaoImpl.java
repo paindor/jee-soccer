@@ -69,8 +69,8 @@ public class PlayerDaoImpl implements PlayerDao{
 			Statement stm = conn.createStatement();
 			PlayerBean p = new PlayerBean();
 			p = param;
-			System.out.println("´Ù¿À" + param.getPlayerName());
-			//System.out.println("´Ù¿À" + p.getPlayerName());
+			System.out.println("ï¿½Ù¿ï¿½" + param.getPlayerName());
+			//System.out.println("ï¿½Ù¿ï¿½" + p.getPlayerName());
 			
 			String pos = "'" + param.getPosition() +"'";
 			String tid = "'" + param.getTeamId() +"'";
@@ -146,28 +146,24 @@ public class PlayerDaoImpl implements PlayerDao{
 	@Override
 	public boolean login(PlayerBean param) {
 		boolean last = false;
-		System.out.println("6.´Ù¿ÀÀÓÇÃ");
+		System.out.println("6.ï¿½Ù¿ï¿½ï¿½ï¿½ï¿½ï¿½");
 		try {
 			String plid = param.getPlayerId();
 			String solar = param.getSolar();
-			System.out.println(param.getPlayerId() + "·Î±×ÀÎ´Ù¿À");
+			System.out.println(param.getPlayerId() + "ï¿½Î±ï¿½ï¿½Î´Ù¿ï¿½");
 
-			String sql = Query.SELECT2_BY_VALUE2.toString();
+			String sql = "SELECT PLAYER_ID p  , SOLAR s FROM PLAYER\r\n" +
+	                "WHERE PLAYER_ID LIKE ?\r\n" +
+	                "AND SOLAR LIKE ?"; 
 			
 			PreparedStatement stm = DatabaseFactory.createDatabase(Constants.VENDER)
 					.getConnection().prepareStatement(sql);
 					
 			
-			stm.setString(1, "PLAYER_ID pid");
-			stm.setString(2,  "SOLAR solar");
+			stm.setString(1, param.getPlayerId());
+			stm.setString(2, param.getSolar());
 			
-			stm.setString(3, "PLAYER");
-			
-			
-			stm.setString(4, "PLAYER_ID");
-			stm.setString(5, "'" + param.getPlayerId() + "'");
-			stm.setString(6, "SOLAR");
-			stm.setString(7, "'" + param.getSolar() + "'");
+		
 			
 			//String sql = "SELECT PLAYER_ID ID , SOLAR solar FROM PLAYER WHERE PLAYER_ID LIKE ? AND SOLAR LIKE ?";
 			System.out.println(sql);
@@ -186,7 +182,7 @@ public class PlayerDaoImpl implements PlayerDao{
 			
 			if(temp != "" && temp2 != "") {
 				last = true;
-			System.out.println(temp + "´Ù¿À ·Î±×ÀÎ");
+			System.out.println(temp + "ï¿½Ù¿ï¿½ ï¿½Î±ï¿½ï¿½ï¿½");
 			
 				
 			}

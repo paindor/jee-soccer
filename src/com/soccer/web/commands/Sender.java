@@ -12,10 +12,11 @@ public class Sender {
 		try {
 			request.getRequestDispatcher(Receiver.cmd.getView()).
 			forward(request, response);
+			System.out.println(Receiver.cmd.getView() + "sender");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("5 ¼¾´õ");
+		System.out.println("5 ï¿½ï¿½ï¿½ï¿½");
 		
 	}
 	public static void redirect(HttpServletRequest request 

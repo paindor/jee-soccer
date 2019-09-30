@@ -22,7 +22,9 @@ public class FacadeController extends HttpServlet {
 	}
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.println("�ۻ�� ����");
+		System.out.println("ㅁㄴㅇㄹ");
+		
+		
 		HttpSession session  = request.getSession();
 		for(Resources r : Resources.values()) {
 			

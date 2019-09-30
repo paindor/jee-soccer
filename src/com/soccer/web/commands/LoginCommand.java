@@ -13,12 +13,12 @@ public class LoginCommand extends Command {
 	public LoginCommand(HttpServletRequest request) {
 		setRequest(request);
 		setDomain(request.getServletPath().substring(1, request.getServletPath().indexOf(".")));
-		setDomain(request.getParameter("nextDomain"));
+		//setDomain(request.getParameter(""));
 		//setDomain(FacadeController.);
 		setAction(request.getParameter("action"));
 		setPage(request.getParameter("page"));
 		excute();
-		System.out.println("4 ·Î±×ÀÎÄ¿¸Çµå");
+		System.out.println("4 ï¿½Î±ï¿½ï¿½ï¿½Ä¿ï¿½Çµï¿½");
 		
 	}
 	@Override
@@ -27,7 +27,7 @@ public class LoginCommand extends Command {
 		param.setPlayerId(request.getParameter("playerId"));
 		param.setSolar(request.getParameter("solar"));
 		
-		System.out.println(param.getPlayerId() + "·Î±äÄ¿¸Çµå");
+		System.out.println(param.getPlayerId() + "ï¿½Î±ï¿½Ä¿ï¿½Çµï¿½");
 		
 		if(PlayerServiceImpl.getInstance().login(param)) {
 			setPage(request.getParameter("page"));
@@ -37,7 +37,8 @@ public class LoginCommand extends Command {
 		}
 		
 		
-		this.view = String.format(Constants.VIEW_PATH_DOUBLE, domain, page );
+		//this.view = String.format(Constants.VIEW_PATH_DOUBLE, domain, page );
+		super.excute();
 	}
 
 }

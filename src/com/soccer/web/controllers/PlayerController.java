@@ -20,14 +20,14 @@ import com.soccer.web.serviceimpls.PlayerServiceImpl;
 
 
 @WebServlet("/player.do")
-public class PlayerController extends HttpServlet {
+public class PlayerController extends HttpServlet  {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("1ÄÁÆ®·Ñ·¯");
-		System.out.println(request.getParameter("playerId") + "ÄÁÆ®·Ñ·¯");
-		System.out.println(request.getParameter("action") + "ÄÁÆ®·Ñ·¯");
+		System.out.println("ã„´ã…ã…‡ã„¹");
+		System.out.println(request.getParameter("playerId") + "ï¿½ï¿½Æ®ï¿½Ñ·ï¿½");
+		System.out.println(request.getParameter("action") + "ï¿½ï¿½Æ®ï¿½Ñ·ï¿½");
 		Receiver.init(request);
 	
 		

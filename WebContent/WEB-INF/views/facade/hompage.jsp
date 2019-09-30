@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<title>k리그의 모든것</title>
-</head>
-<body>
+<<jsp:include page="../common/head.jsp"/>
 <div>
 	
 		<h2><a  id = "btn" href="#">2.포지션종류</a></h2>
@@ -39,7 +32,7 @@
 	 
 	
 	</form>	
-</div>
+
 <script>
 $('#btn').click(function() {
 	
@@ -57,7 +50,4 @@ $('#btn05').submit(function() {
 	
 });
 </script>
-	
-	
-</body>
-</html>
+<jsp:include page="../common/foot.jsp"/>
