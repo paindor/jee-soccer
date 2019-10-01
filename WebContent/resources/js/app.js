@@ -38,7 +38,7 @@ var playerService = (()=>{
 					alert('input error');
 				}else{}
 				
-				alert('ipnut id:' + $('#username').val());
+				
 				$('#login_form').attr('action' , '/jee-soccer/player.do');
 				$('#login_form').submit();
 			});
