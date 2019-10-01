@@ -42,3 +42,4 @@ app.init('${ctx}');
 
 </script>
 <jsp:include page="../common/foot.jsp"/>
+sadfasf
