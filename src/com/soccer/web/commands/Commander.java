@@ -11,7 +11,7 @@ public class Commander {
 	public static Command workOrder(HttpServletRequest request) {
 		Command cmd = null;
 	
-		System.out.println("3 Ä¿¸Ç´õ" + request.getParameter("action"));
+		System.out.println("commander " + request.getParameter("action"));
 		request.getParameter("action");
 		
 		switch(Action.valueOf(request.getParameter("action").toUpperCase())) {
@@ -27,6 +27,11 @@ public class Commander {
 			break;
 		case LOGIN:
 			cmd = new LoginCommand(request);
+			break;
+		case CREATE:
+			cmd = new CreateCommand(request);
+			
+			break;
 			
 					
 		

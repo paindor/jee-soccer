@@ -8,7 +8,7 @@ import com.soccer.web.domains.PlayerBean;
 public interface PlayerDao {
 
 	/*-- SQL_TEST_002
-	-- Æ÷Áö¼Ç Á¾·ù(Áßº¹Á¦°Å,¾øÀ¸¸é ºó°ø°£
+	-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 	*/
 	public List<String> selectPositions();
 	public List<PlayerBean> findPositionByTeamid(PlayerBean param);
@@ -18,6 +18,7 @@ public interface PlayerDao {
 	public List<PlayerBean> selectByMany(PlayerBean param);
 	
 	public boolean login(PlayerBean param);
+	public boolean insertPlayer(PlayerBean param);
 	
 	
 }

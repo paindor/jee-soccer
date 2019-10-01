@@ -18,7 +18,7 @@ public class PlayerServiceImpl implements PlayerService{
 	}
 	
 	private PlayerServiceImpl() {
-		System.out.println("5.¼­ºñ½ºÀÓÇÃ");
+		System.out.println("5.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 	}
 	
 	@Override
@@ -57,6 +57,15 @@ public class PlayerServiceImpl implements PlayerService{
 	public boolean login(PlayerBean param) {
 		
 		return PlayerDaoImpl.getInstance().login(param);
+		
+	}
+
+	@Override
+	public boolean createPlayer(PlayerBean param) {
+	
+		
+		return PlayerDaoImpl.getInstance().insertPlayer(param);
+		
 		
 	}
 	

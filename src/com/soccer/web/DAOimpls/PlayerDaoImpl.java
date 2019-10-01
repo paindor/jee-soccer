@@ -227,5 +227,32 @@ public class PlayerDaoImpl implements PlayerDao{
 		
 		return result;
 	}
+	@Override
+	public boolean insertPlayer(PlayerBean param) {
+
+		boolean result = false;
+		String sql = "INSERT INTO PLAYER (PLAYER_ID, PLAYER_NAME, TEAM_ID , SOLAR)\r\n" + 
+				" VALUES(?, 'ASFD', 'K02' ,? )";
+		
+		try {
+			PreparedStatement stm = DatabaseFactory.createDatabase(Constants.VENDER)
+					.getConnection().prepareStatement(sql);
+			System.out.println("dao " + param.getSolar());
+			stm.setString(1, param.getPlayerId());
+			stm.setString(2, param.getSolar());
+			//stm.setString(3, "k02");
+			//stm.setString(3, param.getSolar());
+			int rs = stm.executeUpdate();
+			result = (rs==1)?  true    :false ;
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+		
+		
+		
+	}
 
 }

@@ -6,12 +6,15 @@ import com.soccer.web.domains.PlayerBean;
 
 public interface PlayerService {
 	/*-- SQL_TEST_002
-	-- Æ÷Áö¼Ç Á¾·ù(Áßº¹Á¦°Å,¾øÀ¸¸é ºó°ø°£
+	-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 	*/
 	public List<String> findPositions();
 	public List<PlayerBean> findTeamIdByposition(PlayerBean param);
 	public List<PlayerBean> findByTidNameHeight(PlayerBean param);
 	public boolean login(PlayerBean param);
+	
+	public boolean createPlayer(PlayerBean param);
+	
 	
 
 }
