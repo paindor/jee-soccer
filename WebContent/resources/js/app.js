@@ -1,14 +1,15 @@
 var app = (()=>{
 	return{
 		init : (ctx)=>{
-			playerService.login();
+			playerService.login(ctx);
+			
+			createPlayer.join(ctx);
+			playerService.moveJoin(ctx);
 		
 		
-			$('#a_join').click(()=>{
-				alert('shit');
-				location.assign(ctx+'/player.do?action=move&page=join');
-				
-			});
+		
+			
+			
 			
 		}
 	};
@@ -32,16 +33,44 @@ var player = (()=>{
 })();
 var playerService = (()=>{
 	return {
-		login: ()=>{
+		login: (ctx)=>{
 			$('#login_btn').click(()=>{
 				if($('#username').val()==='' || $('#password').val()=== ''){
 					alert('input error');
 				}else{}
 				
 				
-				$('#login_form').attr('action' , '/jee-soccer/player.do');
+				$('#login_form').attr('action' , ctx+'/player.do');
 				$('#login_form').submit();
 			});
+			
+		
+			
+		},
+		moveJoin : (ctx)=>{
+			$('#a_join').click(()=>{
+				alert('shit');
+				location.assign(ctx+'/player.do?action=move&page=join');
+				
+			});
+			
 		}
+		
+		
 	};
+})();
+var createPlayer = (()=>{
+	return {
+		join: (ctx)=>{
+			$('#go_join').click(()=>{
+				alert('push');
+				$('#join_form').attr('action', ctx+'/player.do');
+				$('#join_form').submit();
+				
+				
+			});
+			
+		}
+	}
+	
 })();

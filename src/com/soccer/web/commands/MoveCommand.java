@@ -20,7 +20,15 @@ public class MoveCommand extends Command {
 		
 		
 		
+		
 	
+	}
+	@Override
+	public void excute() {
+		
+		super.excute();
+		request.setAttribute("page", request.getParameter("page"));
+		System.out.println(request.getParameter("page") + "movecommand");
 	}
 	
 

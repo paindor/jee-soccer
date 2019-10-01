@@ -36,7 +36,7 @@ public class LoginCommand extends Command {
 			setPage("fail");
 		}
 		
-		
+		request.setAttribute("page",  request.getParameter("page"));
 		//this.view = String.format(Constants.VIEW_PATH_DOUBLE, domain, page );
 		super.excute();
 	}

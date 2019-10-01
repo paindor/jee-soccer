@@ -43,10 +43,22 @@ public class FacadeController extends HttpServlet {
 		//session.setAttribute("js", request.getContextPath() + "resources/js");
 		//session.setAttribute("css", request.getContextPath() + "resources/css");
 		
+		if(request.getParameter("action") != null) {
+			request.setAttribute("page", request.getParameter("action"));
+			
+				 
+			}else {
+				request.setAttribute("page", "login1");
+			
+			}
+			
+		
+		
 		request.getRequestDispatcher(String.format(Constants.VIEW_PATH_DOUBLE,
 				request.getServletPath().substring(1, request.getServletPath().indexOf(".")),
-				"login1"))
+				"main"))
 			.forward(request, response);
+		
 		
 		System.out.println(request.getContextPath() +"����");
 		System.out.println(request.getServletPath());
