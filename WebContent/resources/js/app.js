@@ -6,7 +6,7 @@ var app = (()=>{
 			createPlayer.join(ctx);
 			playerService.moveJoin(ctx);
 			playerService.showPosition(ctx);
-			
+			playerService.goback(ctx);
 		
 		
 		
@@ -69,8 +69,9 @@ var playerService = (()=>{
 		},
 		goback : (ctx)=>{
 			$('#where_to_back').click(()=>{
+				alert('why');
 				
-				location.assign(ctx +'/player.do?action=move&page=main');
+				location.assign(ctx +'/player.do?action=search&page=main');
 			});
 		
 		

@@ -56,6 +56,10 @@ public class SearchCommand extends Command{
 					.findByTidNameHeight(param));
 			break;
 			
+		case "main":
+			request.setAttribute("page", "main");
+			break;
+			
 		
 		}
 		//super.excute();

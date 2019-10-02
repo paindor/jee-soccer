@@ -4,3 +4,9 @@
 포지션은  ${positions}  입니다.
 
 <input type="button" id = "where_to_back" />
+
+ 		<script>
+app.init('${ctx}');
+
+</script>
+ 		
