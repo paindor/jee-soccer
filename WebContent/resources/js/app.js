@@ -5,6 +5,8 @@ var app = (()=>{
 			
 			createPlayer.join(ctx);
 			playerService.moveJoin(ctx);
+			playerService.showPosition(ctx);
+			
 		
 		
 		
@@ -41,6 +43,7 @@ var playerService = (()=>{
 				
 				
 				$('#login_form').attr('action' , ctx+'/player.do');
+				$('#login_form').attr('method' , 'post');
 				$('#login_form').submit();
 			});
 			
@@ -54,9 +57,25 @@ var playerService = (()=>{
 				
 			});
 			
+		},
+		showPosition : (ctx)=>{
+			$('#show_btn').click(()=>{
+				alert('searching');
+				location.assign(ctx +'/player.do?action=search&page=2_showposition');
+				
+				
+			});
+			
+		},
+		goback : (ctx)=>{
+			$('#where_to_back').click(()=>{
+				
+				location.assign(ctx +'/player.do?action=move&page=main');
+			});
+		
+		
+		
 		}
-		
-		
 	};
 })();
 var createPlayer = (()=>{
@@ -65,6 +84,7 @@ var createPlayer = (()=>{
 			$('#go_join').click(()=>{
 				alert('push');
 				$('#join_form').attr('action', ctx+'/player.do');
+				$('#join_form').attr('method' , 'post');
 				$('#join_form').submit();
 				
 				

@@ -28,7 +28,6 @@ public class MoveCommand extends Command {
 		
 		super.excute();
 		request.setAttribute("page", request.getParameter("page"));
-		System.out.println(request.getParameter("page") + "movecommand");
 	}
 	
 

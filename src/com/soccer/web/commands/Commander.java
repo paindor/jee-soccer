@@ -11,7 +11,6 @@ public class Commander {
 	public static Command workOrder(HttpServletRequest request) {
 		Command cmd = null;
 	
-		System.out.println("commander " + request.getParameter("action"));
 		request.getParameter("action");
 		
 		switch(Action.valueOf(request.getParameter("action").toUpperCase())) {

@@ -26,12 +26,10 @@ public class PlayerController extends HttpServlet  {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("ㄴㅁㅇㄹ");
-		System.out.println(request.getParameter("") + "��Ʈ�ѷ�");
-		System.out.println(request.getParameter("action") + "��Ʈ�ѷ�");
+	
+		System.out.println(request.getParameter("page") + "왔다");
 		Receiver.init(request);
 	
-		System.out.println( "plcon " +Action.valueOf(request.getParameter("action").toUpperCase()));
 		switch(Action.valueOf(request.getParameter("action").toUpperCase())) {
 		
 		case CREATE: request.setAttribute("page", "login1");break;
@@ -46,7 +44,6 @@ public class PlayerController extends HttpServlet  {
 		
 		
 		
-		System.out.println(request.getParameter("action" ) + request.getParameter("page"));
 		
 		
 

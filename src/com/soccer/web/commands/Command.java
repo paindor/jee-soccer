@@ -17,7 +17,6 @@ public class Command implements Order {
 	public void excute() {
 		
 		this.view = String.format(Constants.VIEW_PATH_DOUBLE,"facade", "main");
-		System.out.println(this.domain + "�ù�");
 		
 		// TODO Auto-generated method stub
 		

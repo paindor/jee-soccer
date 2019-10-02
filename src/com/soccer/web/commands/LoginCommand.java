@@ -27,18 +27,23 @@ public class LoginCommand extends Command {
 		param.setPlayerId(request.getParameter("playerId"));
 		param.setSolar(request.getParameter("solar"));
 		
-		System.out.println(param.getPlayerId() + "�α�Ŀ�ǵ�");
 		
 		if(PlayerServiceImpl.getInstance().login(param)) {
+			setDomain("player");
 			setPage(request.getParameter("page"));
+			if(request.getParameter("page").equals("main")) {
+				request.setAttribute("page", "main");
+			}
+			
 		}
 		else {
+			setDomain("facade");
 			setPage("fail");
 		}
 		
-		request.setAttribute("page",  request.getParameter("page"));
-		//this.view = String.format(Constants.VIEW_PATH_DOUBLE, domain, page );
-		super.excute();
+		
+		this.view = String.format(Constants.VIEW_PATH_DOUBLE, domain, page );
+		//super.excute();
 	}
 
 }

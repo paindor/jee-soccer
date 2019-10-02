@@ -33,7 +33,7 @@
 				
 			<div>
 			<input type="hidden" name = "action" value = "login" />
-				<input type="hidden" name = "page" value = "hompage" />
+				<input type="hidden" name = "page" value = "main" />
 				<input type="hidden" name = "nextJoin"  value = "join"/>
 			</div>
 				

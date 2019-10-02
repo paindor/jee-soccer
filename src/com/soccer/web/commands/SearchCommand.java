@@ -14,10 +14,9 @@ public class SearchCommand extends Command{
 		setDomain(request.getServletPath().substring(1,
 				request.getServletPath().indexOf(".")));
 		setAction(request.getParameter("action"));
-		setPage(request.getParameter("page"));
+		setPage("main");
 		
-		System.out.println("서블릿패스" + request.getServletPath());
-		System.out.println("컨텍스트패스" + request.getContextPath());
+		 
 		
 		
 		excute();
@@ -33,7 +32,9 @@ public class SearchCommand extends Command{
 		case "2_showposition":
 			request.setAttribute("positions" 
 					,PlayerServiceImpl.getInstance().findPositions() );
+			request.setAttribute("page", "2_showposition");
 			break;
+			
 		case "4_find_by_teamid_position":
 			
 			
